@@ -1,4 +1,4 @@
-package com.ramlawi.note.ui.theme
+package com.ramlawi.notes.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

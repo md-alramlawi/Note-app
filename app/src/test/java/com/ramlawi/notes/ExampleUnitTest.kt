@@ -1,4 +1,4 @@
-package com.ramlawi.note
+package com.ramlawi.notes
 
 import org.junit.Test
 
