@@ -6,10 +6,7 @@ import com.ramlawi.notes.feature_notes.data.data_source.NoteDatabase
 import com.ramlawi.notes.feature_notes.data.repository.NoteRepositoryImpl
 import com.ramlawi.notes.feature_notes.domain.model.Note
 import com.ramlawi.notes.feature_notes.domain.repository.NoteRepository
-import com.ramlawi.notes.feature_notes.domain.use_case.AddNote
-import com.ramlawi.notes.feature_notes.domain.use_case.DeleteNote
-import com.ramlawi.notes.feature_notes.domain.use_case.GetNotes
-import com.ramlawi.notes.feature_notes.domain.use_case.NoteUseCases
+import com.ramlawi.notes.feature_notes.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -48,7 +45,8 @@ object AppModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository)
+            addNote = AddNote(repository),
+            getNote = GetNote(repository)
         )
     }
 }
