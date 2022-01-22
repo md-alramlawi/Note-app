@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.ramlawi.notes.core.util.TestTags
 import com.ramlawi.notes.feature_notes.domain.model.Note
 import com.ramlawi.notes.feature_notes.presentation.add_edit_note.components.TransHintTextFiled
 import com.ramlawi.notes.feature_notes.presentation.notes.NotesEvent
@@ -137,7 +138,8 @@ fun AddEditNoteScreen (
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TestTags.TITLE_TEXT_FILED
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -153,7 +155,8 @@ fun AddEditNoteScreen (
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier.fillMaxHeight(),
+                testTag = TestTags.CONTENT_TEXT_FIELD
             )
 
         }

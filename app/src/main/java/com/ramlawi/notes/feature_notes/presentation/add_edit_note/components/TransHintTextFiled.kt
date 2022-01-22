@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 
 /**
@@ -24,6 +25,7 @@ fun TransHintTextFiled (
     onValueChange: (String) -> Unit,
     textStyle: TextStyle = TextStyle(),
     singleLine: Boolean = false,
+    testTag: String = "",
     onFocusChange: (FocusState) -> Unit
 ){
 
@@ -34,6 +36,7 @@ fun TransHintTextFiled (
             singleLine = singleLine,
             textStyle = textStyle,
             modifier = Modifier
+                .testTag(testTag)
                 .fillMaxWidth()
                 .onFocusChanged {
                     onFocusChange(it)
