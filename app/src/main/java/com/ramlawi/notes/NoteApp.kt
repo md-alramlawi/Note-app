@@ -1,9 +1,7 @@
 package com.ramlawi.notes
 
 import android.app.Application
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
-import java.lang.Appendable
 
 /**
  * Created by Mohammed Alramlawi on 1/16/2022.
@@ -11,4 +9,8 @@ import java.lang.Appendable
 
 @HiltAndroidApp
 class NoteApp : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+    }
 }
