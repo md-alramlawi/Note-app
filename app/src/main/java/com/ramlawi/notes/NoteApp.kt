@@ -1,6 +1,5 @@
 package com.ramlawi.notes
 
-import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 /**
@@ -8,9 +7,11 @@ import dagger.hilt.android.HiltAndroidApp
  */
 
 @HiltAndroidApp
-class NoteApp : Application() {
+open class NoteApp : AppCore(){
 
     override fun onCreate() {
         super.onCreate()
     }
+
+
 }

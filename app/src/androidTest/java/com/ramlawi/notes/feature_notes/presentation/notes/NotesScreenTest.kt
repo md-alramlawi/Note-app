@@ -1,6 +1,5 @@
 package com.ramlawi.notes.feature_notes.presentation.notes
 
-import android.content.Context
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -10,8 +9,6 @@ import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.test.core.app.ApplicationProvider
-import com.ramlawi.notes.R
 import com.ramlawi.notes.core.util.TestTags
 import com.ramlawi.notes.di.AppModule
 import com.ramlawi.notes.feature_notes.presentation.MainActivity
@@ -28,14 +25,13 @@ import org.junit.Test
 /**
  * Created by Mohammed Alramlawi on 1/22/2022.
  */
-//@HiltAndroidTest
-//@UninstallModules(AppModule::class)
+@HiltAndroidTest
+@UninstallModules(AppModule::class)
 class NotesScreenTest {
 
 
-
-//    @get:Rule(order = 0)
-//    val hiltRule = HiltAndroidRule(this)
+    @get:Rule(order = 0)
+    val hiltRule = HiltAndroidRule(this)
 
     @get:Rule(order = 1)
     val composeRule = createAndroidComposeRule<MainActivity>()
@@ -43,7 +39,7 @@ class NotesScreenTest {
     @ExperimentalAnimationApi
     @Before
     fun setUp() {
-        //hiltRule.inject()
+        hiltRule.inject()
         composeRule.setContent {
             val navController = rememberNavController()
             NoteAppTheme {
