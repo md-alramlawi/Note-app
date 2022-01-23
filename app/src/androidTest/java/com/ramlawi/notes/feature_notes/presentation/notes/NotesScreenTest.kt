@@ -25,13 +25,13 @@ import org.junit.Test
 /**
  * Created by Mohammed Alramlawi on 1/22/2022.
  */
-@HiltAndroidTest
-@UninstallModules(AppModule::class)
+//@HiltAndroidTest
+//@UninstallModules(AppModule::class)
 class NotesScreenTest {
 
 
-    @get:Rule(order = 0)
-    val hiltRule = HiltAndroidRule(this)
+//    @get:Rule(order = 0)
+//    val hiltRule = HiltAndroidRule(this)
 
     @get:Rule(order = 1)
     val composeRule = createAndroidComposeRule<MainActivity>()
@@ -39,7 +39,7 @@ class NotesScreenTest {
     @ExperimentalAnimationApi
     @Before
     fun setUp() {
-        hiltRule.inject()
+//        hiltRule.inject()
         composeRule.setContent {
             val navController = rememberNavController()
             NoteAppTheme {
